@@ -1,3 +1,4 @@
+ট
 const loginForm = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -33,7 +34,7 @@ loginForm.addEventListener('submit', function (e) {
     return;
   }
 
-
+ 
   if (rememberCheckbox.checked) {
     localStorage.setItem('username', username);
     localStorage.setItem('password', password);
@@ -44,7 +45,7 @@ loginForm.addEventListener('submit', function (e) {
     localStorage.setItem('remember', 'false');
   }
 
- 
+  // লগইন সাকসেস → প্রোফাইল দেখাও
   centerBox.classList.add('hidden');
   profileSection.classList.remove('hidden');
 });
