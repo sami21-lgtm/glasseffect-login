@@ -16,20 +16,21 @@ html, body {
 .bg-cover {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #ffd700, #00ff80, #0080ff, #8000ff, #ff0080);
+  background-size: 400% 400%;
   z-index: -2;
-  animation: gradientShift 15s ease infinite;
-  background-size: 200% 200%;
+  animation: rainbow 10s ease infinite;
+}
+
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 body.dark .bg-cover {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-}
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  animation: none;
 }
 
 .center-box {
@@ -199,4 +200,89 @@ body.dark .umbrella {
 
 .voice-btn:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* প্রোফাইল সেকশন */
+.profile-section {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.profile-card {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: #f1f1f1;
+}
+
+.logout-btn {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.8;
+  z-index: 5;
 }
