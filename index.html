@@ -10,7 +10,7 @@
 <body>
   <div class="bg-cover" id="bgCover"></div>
 
-  <!-- কালার চেইঞ্জার -->
+
   <div class="color-picker">
     <label for="themeColor">🎨 Theme:</label>
     <select id="themeColor" onchange="changeTheme(this.value)">
@@ -62,20 +62,55 @@
     </div>
   </div>
 
-  <!-- প্রোফাইল সেকশন (লগইনের পর দেখাবে) -->
+ 
   <div id="profileSection" class="profile-section hidden">
     <div class="glass profile-card">
-      <img src="https://avatars.githubusercontent.com/u/132936273?v=4" alt="Sami" class="avatar-img"/>
+     
+      <img src="https://i.imgur.com/8D1t1Hf.jpg" alt="Sami" class="avatar-img"/>
       <h2>Md. Emtiaz Hossain Sami</h2>
       <p>Full Stack Developer | Open Source Enthusiast</p>
+
+      <!-- About -->
+      <div class="section">
+        <h3><i class="fas fa-user"></i> About Me</h3>
+        <p>Assalamualikum, I'm Emtiaz Sami And I'm a Agile Full Stack Web Developer. I love building beautiful and functional web applications.</p>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <h3><i class="fas fa-code"></i> My Skills</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>React, Node.js, Express</li>
+          <li>Python, Django, Flask</li>
+          <li>Git, GitHub, VS Code</li>
+        </ul>
+      </div>
+
+      <!-- Achievements -->
+      <div class="section">
+        <h3><i class="fas fa-trophy"></i> My Achievements</h3>
+        <ul>
+          <li>Built 10+ open-source projects</li>
+          <li>500+ GitHub contributions</li>
+          <li>Active contributor to open-source</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="section">
+        <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
+        <p>Email: emtiazsami@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/sami21-lgtm/Md.-Emtiaz-Hossain-Sami" target="_blank">sami21-lgtm</a></p>
+      </div>
+
       <a href="https://github.com/sami21-lgtm/Md.-Emtiaz-Hossain-Sami" target="_blank" class="profile-btn">
-        <i class="fab fa-github"></i> View GitHub Profile
+        <i class="fab fa-github"></i> View Full GitHub Profile
       </a>
       <button onclick="logout()" class="logout-btn">Logout</button>
     </div>
   </div>
 
-  <!-- ফুটার -->
   <div class="footer">
     Developed by <strong>Emtiaz Hossain Sami</strong>
   </div>
