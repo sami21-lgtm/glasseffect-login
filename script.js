@@ -1,3 +1,4 @@
+// এলিমেন্ট সিলেক্ট
 const loginForm = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -44,7 +45,7 @@ loginForm.addEventListener('submit', function (e) {
     localStorage.setItem('remember', 'false');
   }
 
-  // লগইন সাকসেস
+  // লগইন সাকসেস → প্রোফাইল দেখাও
   centerBox.classList.add('hidden');
   profileSection.classList.remove('hidden');
 });
@@ -85,22 +86,4 @@ function startVoiceInput() {
   recognition.onerror = () => {
     alert('Voice input failed.');
   };
-}
-
-// কালার থিম চেইঞ্জার
-function changeTheme(color) {
-  const root = document.documentElement;
-  const bgCover = document.getElementById('bgCover');
-  const themes = {
-    rainbow: 'linear-gradient(45deg, #ff0080, #ff8c00, #ffd700, #00ff80, #0080ff, #8000ff, #ff0080)',
-    blue: 'linear-gradient(135deg, #74ebd5, #ACB6E5)',
-    pink: 'linear-gradient(135deg, #ff6ec4, #7873f5)',
-    green: 'linear-gradient(135deg, #11998e, #38ef7d)',
-    gold: 'linear-gradient(135deg, #f2994a, #f2c94c)',
-    red: 'linear-gradient(135deg, #eb3349, #f45c43)',
-    purple: 'linear-gradient(135deg, #667eea, #764ba2)'
-  };
-  bgCover.style.background = themes[color] || themes.rainbow;
-  bgCover.style.backgroundSize = '400% 400%';
-  bgCover.style.animation = color === 'rainbow' ? 'rainbow 10s ease infinite' : 'none';
 }
