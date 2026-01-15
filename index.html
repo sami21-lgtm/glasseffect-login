@@ -8,9 +8,24 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
+  <div class="bg-cover" id="bgCover"></div>
+
+  <!-- কালার চেইঞ্জার -->
+  <div class="color-picker">
+    <label for="themeColor">🎨 Theme:</label>
+    <select id="themeColor" onchange="changeTheme(this.value)">
+      <option value="rainbow">Rainbow</option>
+      <option value="blue">Blue</option>
+      <option value="pink">Pink</option>
+      <option value="green">Green</option>
+      <option value="gold">Gold</option>
+      <option value="red">Red</option>
+      <option value="purple">Purple</option>
+    </select>
+  </div>
+
   <!-- লগইন ফরম -->
-  <div class="bg-cover"></div>
-  <div class="center-box">
+  <div class="center-box" id="loginBox">
     <div class="glass">
       <div class="form-header">
         <div class="man-icon" id="manIcon" title="Click me!">
