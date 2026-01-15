@@ -2,20 +2,12 @@ const form = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const rememberCheckbox = document.getElementById('remember');
-const themeToggle = document.getElementById('themeToggle');
+const manIcon = document.getElementById('manIcon');
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
-  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-}
-
-// Theme Toggle
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+// Man click effect
+manIcon.addEventListener('click', () => {
+  manIcon.classList.add('clicked');
+  setTimeout(() => manIcon.classList.remove('clicked'), 500);
 });
 
 // Load saved credentials
@@ -69,7 +61,6 @@ function startVoiceInput() {
     const transcript = event.results[0][0].transcript.toLowerCase();
     const words = transcript.split(' ');
 
-    // Try to find username and password
     const userIndex = words.indexOf('username');
     const passIndex = words.indexOf('password');
 
