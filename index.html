@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abstract Glass Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glass Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="login-wrapper">
-        <div class="login-card">
-            <h2>Welcome Back</h2>
-            <form id="loginForm">
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox"> Remember me</label>
-                    <a href="#">Forgot?</a>
-                </div>
-                <button type="submit" class="submit-btn">Login</button>
-                <p class="register">New here? <a href="#">Create Account</a></p>
-            </form>
+  <div class="bg-cover"></div>
+
+  <div class="container">
+    <div class="glass">
+      <div class="form-header">
+        <i class="fas fa-user-circle avatar"></i>
+        <h2>Welcome Back</h2>
+        <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+      </div>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Username" required />
         </div>
+
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Password" required />
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+        <div class="extra">
+          <label><input type="checkbox" id="remember" /> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+      </form>
+
+      <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+
+      <button class="voice-btn" onclick="startVoiceInput()">
+        <i class="fas fa-microphone"></i> Voice Input
+      </button>
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
