@@ -1,6 +1,14 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Page refresh bondho korbe
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    alert('Logging in...'); 
-    // Ekhane apni chaile user check korar logic likhte paren
+    const btn = document.querySelector('.submit-btn');
+    btn.innerHTML = "Authenticating...";
+    btn.style.pointerEvents = "none";
+
+    // Fake loading delay
+    setTimeout(() => {
+        alert("Login Successful! Redirecting...");
+        btn.innerHTML = "Success!";
+        btn.style.background = "#28a745";
+    }, 2000);
 });
