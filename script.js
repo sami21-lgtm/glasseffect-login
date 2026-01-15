@@ -1,8 +1,10 @@
-const form = document.getElementById('loginForm');
+const loginForm = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const rememberCheckbox = document.getElementById('remember');
 const manIcon = document.getElementById('manIcon');
+const profileSection = document.getElementById('profileSection');
+const centerBox = document.querySelector('.center-box');
 
 // Man click effect
 manIcon.addEventListener('click', () => {
@@ -19,8 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Form submit
-form.addEventListener('submit', function (e) {
+// Login form submit
+loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const username = usernameInput.value.trim();
@@ -31,25 +33,34 @@ form.addEventListener('submit', function (e) {
     return;
   }
 
-  // Save credentials if "Remember me" is checked
-  if (rememberCheckbox.checked) {
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
-    localStorage.setItem('remember', 'true');
-  } else {
-    localStorage.removeItem('username');
-    localStorage.removeItem('password');
-    localStorage.setItem('remember', 'false');
-  }
-
-  // Dummy login
+  // Dummy check
   if (username === 'admin' && password === '1234') {
-    alert(`Welcome, ${username}!`);
-    // Redirect or next action
+    // Save credentials if "Remember me" is checked
+    if (rememberCheckbox.checked) {
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+      localStorage.setItem('remember', 'true');
+    } else {
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+      localStorage.setItem('remember', 'false');
+    }
+
+    // Hide login form and show profile
+    centerBox.classList.add('hidden');
+    profileSection.classList.remove('hidden');
   } else {
     alert('Invalid credentials.');
   }
 });
+
+// Logout function
+function logout() {
+  profileSection.classList.add('hidden');
+  centerBox.classList.remove('hidden');
+  loginForm.reset();
+  localStorage.setItem('remember', 'false');
+}
 
 // Voice Input
 function startVoiceInput() {
