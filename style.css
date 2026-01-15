@@ -2,101 +2,112 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
-    /* --- IMAGE ADD KORAR JAYGA --- */
-    /* Apnar kachhe chobi thakle 'bg.jpg' likhun, nathakle nicher online link-ti thakuk */
-    background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e') no-repeat;
-    background-size: cover;
-    background-position: center;
+    /* Apnar deya image link ekhane add kora hoyeche */
+    background: url('https://raw.githubusercontent.com/Akash-Maji/Images/main/abstract-glass-bg.jpg') no-repeat center center/cover;
+    overflow: hidden;
 }
 
-.login-box {
-    position: relative;
-    width: 400px;
+/* Page load hoyar somoy animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.login-card {
+    width: 380px;
     padding: 40px;
-    /* Glass Effect-er jonno transparent white background */
-    background: rgba(255, 255, 255, 0.1); 
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08); /* Khub halka white overlay */
     border-radius: 20px;
-    
-    /* Pechoner image-ke jhapsha korar jonno blur */
-    backdrop-filter: blur(15px); 
+    backdrop-filter: blur(15px); /* Glass blur effect */
     -webkit-backdrop-filter: blur(15px);
-    
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
+    animation: slideUp 0.8s ease-out forwards;
 }
 
 h2 {
-    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.input-box {
     margin-bottom: 20px;
 }
 
-.input-field {
-    margin: 20px 0;
-}
-
-.input-field input {
+.input-box input {
     width: 100%;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    outline: none;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    padding: 0 15px;
     color: white;
-    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
 }
 
-.input-field input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+.input-box input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ff00ea; /* Pink glow animation-er moto */
+    box-shadow: 0 0 15px rgba(255, 0, 234, 0.3);
 }
 
 .remember-forgot {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9em;
-    margin: -10px 0 15px;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
 }
 
 .remember-forgot a {
-    color: white;
+    color: #00d4ff; /* Blue neon color */
     text-decoration: none;
 }
 
-.btn {
+.submit-btn {
     width: 100%;
-    height: 45px;
-    background: white;
+    padding: 12px;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    color: #333;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.register-link {
-    font-size: 0.9em;
-    margin-top: 20px;
-}
-
-.register-link a {
+    background: linear-gradient(45deg, #ff00ea, #00d4ff);
     color: white;
-    text-decoration: none;
     font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+.register {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.register a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
 }
