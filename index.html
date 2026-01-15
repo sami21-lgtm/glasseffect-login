@@ -10,7 +10,7 @@
 <body>
   <div class="bg-cover" id="bgCover"></div>
 
-
+  <!-- কালার পিকার -->
   <div class="color-picker">
     <label for="themeColor">🎨 Theme:</label>
     <select id="themeColor" onchange="changeTheme(this.value)">
@@ -62,33 +62,44 @@
     </div>
   </div>
 
- 
+  <!-- প্রোফাইল সেকশন (লগইনের পর দেখাবে) -->
   <div id="profileSection" class="profile-section hidden">
     <div class="glass profile-card">
-     
+      <!-- নিজের পিকচার (তুমি চাইলে বদলাতে পারবে) -->
       <img src="https://i.imgur.com/8D1t1Hf.jpg" alt="Sami" class="avatar-img"/>
+
       <h2>Md. Emtiaz Hossain Sami</h2>
-      <p>Full Stack Developer | Open Source Enthusiast</p>
+      <p class="tagline">Full Stack Developer | Open Source Enthusiast</p>
 
       <!-- About -->
-      <div class="section">
+      <div class="section fade-in">
         <h3><i class="fas fa-user"></i> About Me</h3>
-        <p>Assalamualikum, I'm Emtiaz Sami And I'm a Agile Full Stack Web Developer. I love building beautiful and functional web applications.</p>
+        <p>Assalamualikum, I'm Emtiaz Sami. I'm a passionate Full Stack Web Developer. I love building beautiful and functional web applications.</p>
       </div>
 
-      <!-- Skills -->
-      <div class="section">
-        <h3><i class="fas fa-code"></i> My Skills</h3>
+      <!-- Education -->
+      <div class="section fade-in">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
         <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React, Node.js, Express</li>
-          <li>Python, Django, Flask</li>
-          <li>Git, GitHub, VS Code</li>
+          <li><strong>School:</strong> [Your School Name]</li>
+          <li><strong>College:</strong> [Your College Name]</li>
+          <li><strong>University:</strong> [Your University Name]</li>
         </ul>
       </div>
 
+      <!-- Skills -->
+      <div class="section fade-in">
+        <h3><i class="fas fa-code"></i> My Skills</h3>
+        <div class="skills-grid">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>React</span><span>Node.js</span><span>Express</span>
+          <span>Python</span><span>Django</span><span>Flask</span>
+          <span>Git</span><span>GitHub</span><span>VS Code</span>
+        </div>
+      </div>
+
       <!-- Achievements -->
-      <div class="section">
+      <div class="section fade-in">
         <h3><i class="fas fa-trophy"></i> My Achievements</h3>
         <ul>
           <li>Built 10+ open-source projects</li>
@@ -98,7 +109,7 @@
       </div>
 
       <!-- Contact -->
-      <div class="section">
+      <div class="section fade-in">
         <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
         <p>Email: emtiazsami@gmail.com</p>
         <p>GitHub: <a href="https://github.com/sami21-lgtm/Md.-Emtiaz-Hossain-Sami" target="_blank">sami21-lgtm</a></p>
@@ -111,6 +122,7 @@
     </div>
   </div>
 
+  <!-- ফুটার -->
   <div class="footer">
     Developed by <strong>Emtiaz Hossain Sami</strong>
   </div>
