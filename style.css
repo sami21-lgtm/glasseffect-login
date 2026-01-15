@@ -1,113 +1,169 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Apnar deya image link ekhane add kora hoyeche */
-    background: url('https://raw.githubusercontent.com/Akash-Maji/Images/main/abstract-glass-bg.jpg') no-repeat center center/cover;
-    overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.3s ease;
 }
 
-/* Page load hoyar somoy animation */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+.bg-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  z-index: -1;
 }
 
-.login-card {
-    width: 380px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.08); /* Khub halka white overlay */
-    border-radius: 20px;
-    backdrop-filter: blur(15px); /* Glass blur effect */
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    color: white;
-    text-align: center;
-    animation: slideUp 0.8s ease-out forwards;
+body.dark .bg-cover {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-h2 {
-    margin-bottom: 30px;
-    font-weight: 500;
-    letter-spacing: 1px;
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.input-box {
-    margin-bottom: 20px;
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  width: 100%;
 }
 
-.input-box input {
-    width: 100%;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    color: white;
-    outline: none;
-    transition: 0.3s;
+body.dark .glass {
+  background: rgba(0, 0, 0, 0.25);
 }
 
-.input-box input:focus {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #ff00ea; /* Pink glow animation-er moto */
-    box-shadow: 0 0 15px rgba(255, 0, 234, 0.3);
+.form-header {
+  position: relative;
 }
 
-.remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    margin-bottom: 25px;
+.form-header .avatar {
+  font-size: 60px;
+  margin-bottom: 10px;
 }
 
-.remember-forgot a {
-    color: #00d4ff; /* Blue neon color */
-    text-decoration: none;
+.form-header h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #ff00ea, #00d4ff);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.theme-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.submit-btn:active {
-    transform: scale(0.95);
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #fff;
+  opacity: 0.8;
 }
 
-.register {
-    margin-top: 20px;
-    font-size: 0.9rem;
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
 }
 
-.register a {
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
+.input-group input::placeholder {
+  color: #eee;
 }
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #f1f1f1;
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.extra a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.extra a:hover {
+  text-decoration: underline;
+}
+
+.signup {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.voice-btn {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.voice-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+   
