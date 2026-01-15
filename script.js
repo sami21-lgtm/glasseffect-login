@@ -1,4 +1,3 @@
-
 const loginForm = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -34,7 +33,7 @@ loginForm.addEventListener('submit', function (e) {
     return;
   }
 
- 
+  // যেকোনো ইউজার/পাস হলেই লগইন
   if (rememberCheckbox.checked) {
     localStorage.setItem('username', username);
     localStorage.setItem('password', password);
