@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Emtiaz Hossain Sami</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – Emtiaz Hossain Sami</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="bg-cover" id="bgCover"></div>
 
-
+  <!-- Theme picker -->
   <div class="color-picker">
     <label for="themeColor">🎨 Theme:</label>
     <select id="themeColor" onchange="changeTheme(this.value)">
@@ -24,7 +24,7 @@
     </select>
   </div>
 
-  
+  <!-- LOGIN BOX -->
   <div class="center-box" id="loginBox">
     <div class="glass">
       <div class="form-header">
@@ -38,19 +38,24 @@
       <form id="loginForm">
         <div class="input-group">
           <i class="fas fa-user"></i>
-          <input type="text" id="username" placeholder="Username" required />
+          <input type="text" id="username" placeholder="Username" required>
         </div>
 
         <div class="input-group">
           <i class="fas fa-lock"></i>
-          <input type="password" id="password" placeholder="Password" required />
+          <input type="password" id="password" placeholder="Password" required>
         </div>
 
         <button type="submit" class="login-btn">Login</button>
 
         <div class="extra">
-          <label><input type="checkbox" id="remember" /> Remember me</label>
+          <label><input type="checkbox" id="remember"> Remember me</label>
           <a href="#">Forgot password?</a>
+        </div>
+
+        <!-- 100 % label (fixed & small) -->
+        <div class="percent-box">
+          <span class="percent-text">100%</span>
         </div>
       </form>
 
@@ -62,22 +67,19 @@
     </div>
   </div>
 
- 
+  <!-- PROFILE SECTION -->
   <div id="profileSection" class="profile-section hidden">
     <div class="glass profile-card">
-     
-      <img src="590767156_860519166891739_2633869132777924248_n.jpg" alt="Sami" class="avatar-img"/>
+      <img src="590767156_860519166891739_2633869132777924248_n.jpg" alt="Sami" class="avatar-img">
 
       <h2>Md. Emtiaz Hossain Sami</h2>
       <p class="tagline">Full Stack Developer | Open Source Enthusiast</p>
 
-      <!-- About -->
       <div class="section fade-in">
         <h3><i class="fas fa-user"></i> About Me</h3>
         <p>Assalamualikum, I'm Emtiaz Sami. I'm a passionate Full Stack Web Developer. I love building beautiful and functional web applications.</p>
       </div>
 
-      <!-- Education -->
       <div class="section fade-in">
         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
         <ul>
@@ -87,7 +89,6 @@
         </ul>
       </div>
 
-      <!-- Skills -->
       <div class="section fade-in">
         <h3><i class="fas fa-code"></i> My Skills</h3>
         <div class="skills-grid">
@@ -98,7 +99,6 @@
         </div>
       </div>
 
-      <!-- Achievements -->
       <div class="section fade-in">
         <h3><i class="fas fa-trophy"></i> My Achievements</h3>
         <ul>
@@ -108,7 +108,6 @@
         </ul>
       </div>
 
-      <!-- Contact -->
       <div class="section fade-in">
         <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
         <p>Email: emtiazsami@gmail.com</p>
@@ -122,10 +121,9 @@
     </div>
   </div>
 
-
-  <div class="footer">
+  <footer class="footer">
     Developed by <strong>Emtiaz Hossain Sami</strong>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
